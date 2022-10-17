@@ -1,0 +1,78 @@
+name: main
+#on: [push]
+on:
+  workflow_dispatch: {}
+jobs:
+  build-web-gl:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: who am I tho
+        run: whoami
+
+      # checkout
+      - uses: actions/checkout@v3
+
+      # Git LFS
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v2
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      # cache stuff
+      - name: Cache
+        uses: actions/cache@v3.0.10
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+
+      # take ownership of them files tho
+      - name: take ownership of all files
+        if: always()
+        run: chown -R ttay24:ttay24 .
+
+      # Output
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
+
+  deploy:
+    needs: [build-web-gl]
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Pull in build artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          # Artifact name
+          name: Build
+          # Destination path
+          path: build
+
+      - name: Copy to nginx
+        run: |
+          pwd
+          ls -la
+          ls -la ./build
+          ls -la ./mnt
