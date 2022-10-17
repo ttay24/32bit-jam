@@ -75,4 +75,6 @@ jobs:
           pwd
           ls -la
           ls -la ./build
-          ls -la ./mnt
+          ls -la /mnt/nginx-www/32bit-jam
+          rm -r /mnt/nginx-www/32bit-jam/*
+          cp -a ./build/. /mnt/nginx-www/32bit-jam/
