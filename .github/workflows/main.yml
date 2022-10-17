@@ -6,9 +6,6 @@ jobs:
   build-web-gl:
     runs-on: [self-hosted, linux]
     steps:
-      - name: who am I tho
-        run: whoami
-
       # checkout
       - uses: actions/checkout@v3
 
@@ -47,11 +44,6 @@ jobs:
         with:
           targetPlatform: WebGL
 
-      # take ownership of them files tho
-      - name: take ownership of all files
-        if: always()
-        run: chown -R ttay24:ttay24 .
-
       # Output
       - uses: actions/upload-artifact@v2
         with:
@@ -75,4 +67,6 @@ jobs:
           pwd
           ls -la
           ls -la ./build
-          ls -la ./mnt
+          ls -la /mnt/nginx-www/32bit-jam
+          rm -r /mnt/nginx-www/32bit-jam/*
+          cp -a ./build/. /mnt/nginx-www/32bit-jam/
