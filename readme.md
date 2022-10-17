@@ -21,5 +21,7 @@ git clone git@github.com:ttay24/32bit-jam.git
 
 3. If you want to use Sourcetree
    1. Add the repository
-      ![add](./readme-readme-images/add-repo.png)
-   2.
+      ![Pic](./readme-images/add-repo.png)
+   2. Click "Add"
+      ![Pic](./readme-images/add-existing.png)
+   3. Add the directory and hit "Add"
