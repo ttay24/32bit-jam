@@ -64,9 +64,5 @@ jobs:
 
       - name: Copy to nginx
         run: |
-          pwd
-          ls -la
-          ls -la ./build
-          ls -la /mnt/nginx-www/32bit-jam
           rm -r /mnt/nginx-www/32bit-jam/*
-          cp -a ./build/. /mnt/nginx-www/32bit-jam/
+          cp -a ./build/WebGL/WebGL/. /mnt/nginx-www/32bit-jam/
