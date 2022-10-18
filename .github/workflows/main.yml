@@ -1,7 +1,5 @@
 name: main
-#on: [push]
-on:
-  workflow_dispatch: {}
+on: [push]
 jobs:
   build-web-gl:
     runs-on: [self-hosted, linux]
