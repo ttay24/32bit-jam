@@ -21,13 +21,13 @@ public class AimOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        thePlayer.transform.eulerAngles = new Vector3(thePlayer.transform.eulerAngles.x, mainCam.transform.eulerAngles.y, thePlayer.transform.eulerAngles.z);
+        //thePlayer.transform.eulerAngles = new Vector3(thePlayer.transform.eulerAngles.x, mainCam.transform.eulerAngles.y, thePlayer.transform.eulerAngles.z);
         if (Input.GetButton("Fire2"))
         {
             theReticle.SetActive(true);
             aimingCam.SetActive(true);
             normalCam.SetActive(false);
-            //thePlayer.transform.eulerAngles = new Vector3(thePlayer.transform.eulerAngles.x, mainCam.transform.eulerAngles.y, thePlayer.transform.eulerAngles.z);
+            thePlayer.transform.eulerAngles = new Vector3(thePlayer.transform.eulerAngles.x, mainCam.transform.eulerAngles.y, thePlayer.transform.eulerAngles.z);
         }
         
         else if (!Input.GetButton("Fire2"))
