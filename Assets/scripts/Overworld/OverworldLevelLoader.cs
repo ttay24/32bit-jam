@@ -6,7 +6,7 @@ using UnityEngine;
 public class OverworldLevelLoader : SceneLoader
 {
     [SerializeField]
-    public List<Object> ScenesToLoad = new List<Object>();
+    public List<string> ScenesToLoad = new List<string>();
 
     [SerializeField]
     public float CollisionRadius = 18.0f;

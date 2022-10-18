@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class TitleSceneLoader : SceneLoader
 {
     [SerializeField]
-    public Object OverworldScene;
+    public string OverworldScene;
 
     public void StartGame()
     {
-        base.LoadLevel(new List<Object> { OverworldScene });
+        base.LoadLevel(new List<string> { OverworldScene });
     }
 
     public void HowToPlay()

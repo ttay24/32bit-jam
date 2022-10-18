@@ -9,7 +9,7 @@ namespace Jam.Core
     {
         private List<AsyncOperation> loadingScenes = new List<AsyncOperation>();
 
-        public void LoadLevel(List<Object> scenes)
+        public void LoadLevel(List<string> scenes)
         {
             // reset the list of scenes that are loading
             loadingScenes = new List<AsyncOperation>();
@@ -17,7 +17,8 @@ namespace Jam.Core
             // add the scenes that we need to load to the loader array
             for (int i = 0; i < scenes.Count; i++)
             {
-                loadingScenes.Add(SceneManager.LoadSceneAsync(scenes[i].name));
+                loadingScenes.Add(SceneManager.LoadSceneAsync(scenes[i]));
+                Debug.Log(string.Format("Starting to load scene \"{0}\"", scenes[i]));
             }
 
             // start loading and show loading screen things
