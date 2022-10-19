@@ -2,6 +2,7 @@ using Jam.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OverworldLevelLoader : SceneLoader
 {
@@ -11,14 +12,44 @@ public class OverworldLevelLoader : SceneLoader
     [SerializeField]
     public float CollisionRadius = 18.0f;
 
+    // player stuff
+    private GameObject Player;
     private Transform PlayerTransform;
+    private PlayerInputActions PlayerInputActions;
+
     private Color OriginalColor;
     private bool InRange = false;
 
     private void Awake()
     {
-        PlayerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+        Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerTransform = Player?.transform;
+
+        // setup player actions
+        PlayerInputActions = new PlayerInputActions();
+        PlayerInputActions.Overworld.Enable();
+
+        // store the original color so we can reset it; this will probs get removed
         OriginalColor = this.gameObject.GetComponent<Renderer>().material.color;
+    }
+
+    private void OnEnable()
+    {
+        PlayerInputActions.Overworld.SelectLevel.performed += SelectLevel_performed;
+    }
+
+    private void OnDisable()
+    {
+        PlayerInputActions.Overworld.SelectLevel.performed -= SelectLevel_performed;
+    }
+
+    private void SelectLevel_performed(InputAction.CallbackContext obj)
+    {
+        // if player is in range when we select, then load the next level
+        if (InRange)
+        {
+            LoadScenes();
+        }
     }
 
     // Update is called once per frame
@@ -28,9 +59,6 @@ public class OverworldLevelLoader : SceneLoader
         {
             this.gameObject.GetComponent<Renderer>().material.color = Color.red;
             InRange = true;
-
-            // TODO: make this load happen on some type of input
-            LoadScenes();
         }
         else
         {

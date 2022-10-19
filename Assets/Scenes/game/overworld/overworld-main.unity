@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 743115448}
   - component: {fileID: 743115447}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScenesToLoad:
   - Scenes/SwagMaster1317/scene
-  CollisionRadius: 18
+  CollisionRadius: 19
 --- !u!1 &800472911
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,37 +990,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &935929636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 935929637}
-  m_Layer: 8
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &935929637
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935929636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1034729399}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031514651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,8 +1088,7 @@ Transform:
   m_LocalPosition: {x: -162.725, y: 178.199, z: -230.832}
   m_LocalScale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 935929637}
+  m_Children: []
   m_Father: {fileID: 1189634738}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 52.006, y: 32.289, z: 0}
@@ -1537,7 +1505,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1734382542}
   - component: {fileID: 1734382544}
-  - component: {fileID: 1734382543}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1560,14 +1527,6 @@ Transform:
   m_Father: {fileID: 1978427652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1734382543
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734382541}
-  m_Enabled: 1
 --- !u!20 &1734382544
 Camera:
   m_ObjectHideFlags: 0
@@ -2288,6 +2247,14 @@ PrefabInstance:
     - target: {fileID: 4747647538009293606, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
       propertyPath: m_Name
       value: OverWorldBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747647538009293610, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747647538009293610, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Overworld
       objectReference: {fileID: 0}
     - target: {fileID: 5379788230931323292, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
       propertyPath: m_RootOrder
