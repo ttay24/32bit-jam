@@ -14,10 +14,15 @@ namespace Jam.Core
             // reset the list of scenes that are loading
             loadingScenes = new List<AsyncOperation>();
 
+            var activeScene = SceneManager.GetActiveScene();
+
             // add the scenes that we need to load to the loader array
             for (int i = 0; i < scenes.Count; i++)
             {
-                loadingScenes.Add(SceneManager.LoadSceneAsync(scenes[i]));
+                var loadMode = LoadSceneMode.Additive;
+                if (i == 0) loadMode = LoadSceneMode.Single;
+
+                loadingScenes.Add(SceneManager.LoadSceneAsync(scenes[i], loadMode));
                 Debug.Log(string.Format("Starting to load scene \"{0}\"", scenes[i]));
             }
 
