@@ -1192,6 +1192,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.1799874
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.3199925
+      objectReference: {fileID: 0}
     - target: {fileID: 8578890167820323942, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -1239,6 +1247,14 @@ PrefabInstance:
     - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 8578890169235192333, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: theReticle
