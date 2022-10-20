@@ -24,6 +24,9 @@ public class LockMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Screen.fullScreen == false)
+        {
+            fullScreenButton.SetActive(true);
+        }
     }
 }
