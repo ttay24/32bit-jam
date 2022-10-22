@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029780699, g: 0.024107927, b: 0.030409323, a: 1}
+  m_IndirectSpecularColor: {r: 0.029780699, g: 0.02410793, b: 0.030409323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -861,29 +861,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: colorDepth.x
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: colorDepth.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: colorDepth.z
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: ditherDepth.x
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: ditherDepth.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: ditherDepth.z
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: framerateLimit
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8699999
       objectReference: {fileID: 0}
     - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.319992
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890167820323931, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: MoveSpeed
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890167820323931, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: SprintSpeed
-      value: 8
+      value: -7.5799866
       objectReference: {fileID: 0}
     - target: {fileID: 8578890167820323942, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_Name
@@ -892,18 +904,6 @@ PrefabInstance:
     - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalPosition.x
@@ -950,16 +950,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578890169235192332, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 8578890169235192333, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: theReticle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1416376648}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
