@@ -2573,14 +2573,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverWorldBoat
       objectReference: {fileID: 0}
-    - target: {fileID: 4747647538009293610, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747647538009293610, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Overworld
-      objectReference: {fileID: 0}
     - target: {fileID: 5379788230931323292, guid: dc2abdccd961faa44bf2b3706139d278, type: 3}
       propertyPath: m_RootOrder
       value: 6
