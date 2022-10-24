@@ -10,6 +10,7 @@ public class TitleSceneLoader : SceneLoader
     [SerializeField]
     public string OverworldScene;
     public GameObject fullScreenButton;
+    public GameObject creditsObj;
     public void StartGame()
     {
         base.LoadLevel(new List<string> { OverworldScene });
@@ -28,9 +29,14 @@ public class TitleSceneLoader : SceneLoader
 
     public void Credits()
     {
+        creditsObj.SetActive(true);
         // TODO
     }
-
+    public void CloseCredits()
+    {
+        creditsObj.SetActive(false);
+        // TODO
+    }
     public void ExitGame()
     {
         // TODO
