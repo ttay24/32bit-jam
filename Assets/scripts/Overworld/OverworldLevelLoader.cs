@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class OverworldLevelLoader : SceneLoader
 {
+    // level info
+    [SerializeField]
+    string LevelName;
+
     [SerializeField]
     public List<string> ScenesToLoad = new List<string>();
 
@@ -58,11 +62,22 @@ public class OverworldLevelLoader : SceneLoader
         if (Mathf.Abs(Vector3.Distance(PlayerTransform.position, gameObject.transform.position)) < CollisionRadius)
         {
             this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+
+            // if this wasn't in range, the it changed, so let's dispatch an event saying that it changed
+            if (!InRange)
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, true);
+
             InRange = true;
         }
         else
         {
             this.gameObject.GetComponent<Renderer>().material.color = OriginalColor;
+
+            // if we were in range, then we know we haven't unset it. We only want to do this 
+            // once, otherwise we might overwrite other levels that are trying to display
+            if (InRange)
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, false);
+
             InRange = false;
         }
     }
