@@ -34,19 +34,13 @@ public class SpotlightEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // rotate the spotlight
         this.transform.Rotate(Vector3.up, CurrentRotateDirection * RotateSpeed * Time.deltaTime);
 
-        var currentRotation = this.transform.localRotation.eulerAngles;
-
-        // normalize the y rotation
-        var currentYRotation = currentRotation.y;
-        //if (IsMaxAbove360 && )
-
-        //Debug.Log(string.Format("currentYRotation : {0}", currentYRotation));
-
+        // get the degrees that we have rotated from the original start rotation
         var rotatedFromOG = Quaternion.Angle(transform.localRotation, StartQuaternion);
-        Debug.Log(string.Format("angle: {0}", Quaternion.Angle(transform.localRotation, StartQuaternion)));
 
+        // if we've rotated past our search angle, then we need need to flip the rotate direction
         if (rotatedFromOG > (SearchAngle / 2.0f))
         {
             // clamp to max if we are rotating that way
@@ -58,11 +52,5 @@ public class SpotlightEnemy : MonoBehaviour
 
             CurrentRotateDirection *= -1.0f;
         }
-        /*else if (rotatedFromOG < (SearchAngle / -2.0f))
-        {
-            CurrentRotateDirection *= -1.0f;
-            // clamp to min
-            this.transform.localRotation = MinimumRotation;
-        }*/
     }
 }
