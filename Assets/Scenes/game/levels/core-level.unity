@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029780699, g: 0.02410793, b: 0.030409323, a: 1}
+  m_IndirectSpecularColor: {r: 0.029780699, g: 0.024107927, b: 0.030409323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -905,46 +905,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: colorDepth.x
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: colorDepth.y
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: colorDepth.z
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: ditherDepth.x
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: ditherDepth.y
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: ditherDepth.z
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554429, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: framerateLimit
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.8699999
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.039999
-      objectReference: {fileID: 0}
-    - target: {fileID: 497330654565554431, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.619995
-      objectReference: {fileID: 0}
     - target: {fileID: 8578890167820323942, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -992,30 +952,6 @@ PrefabInstance:
     - target: {fileID: 8578890167820323943, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168497977572, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: ShoulderOffset.y
-      value: 4.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168497977572, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: ShoulderOffset.z
-      value: -10.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890168783295239, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578890169235192332, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 8578890169235192333, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: theReticle
