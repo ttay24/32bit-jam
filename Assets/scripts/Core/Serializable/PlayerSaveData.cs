@@ -2,28 +2,80 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+
+[Serializable]
+public class PlayerLevelProgressDictionary : UnitySerializedDictionary<string, PlayerLevelData> { }
 
 [Serializable]
 public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
 {
     const string FILE_NAME = "player-save-data.json";
+
+    private static PlayerSaveData _instance;
+    public static PlayerSaveData Instance { 
+        get
+        {
+            return _instance;
+        }
+    }
     
-    // TODO
-    public int Progress = 0;
     [SerializeField]
-    public Dictionary<string, PlayerLevelData> LevelProgress = new Dictionary<string, PlayerLevelData>();
+    public PlayerLevelProgressDictionary LevelProgress = new PlayerLevelProgressDictionary();
     // TODO: inventory
 
     private void Awake()
     {
+        _instance = this;
+
         // TODO: pull in any dependencies after we load
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        // load in the level details
+        GameEventDispatcher.OnVictoryTriggered += GameEventDispatcher_OnVictoryTriggered;
+    }
+
+    private void OnDisable()
+    {
+        GameEventDispatcher.OnVictoryTriggered -= GameEventDispatcher_OnVictoryTriggered;
+    }
+
+    #region event handlers
+    private void GameEventDispatcher_OnVictoryTriggered(object sender, EventArgs e)
+    {
+        LevelData levelData = (LevelData) sender;
+
+        // get the level progress (or instantiate it)
+        PlayerLevelData playerLevelData = GetPlayerLevelData(levelData);
+
+        // mark completed
+        playerLevelData.LevelCompleted = true;
+
+        // upsert the object to the dictionary so that we can save the data
+        LevelProgress.Upsert(playerLevelData.Id, playerLevelData);
+
+        // save the progress
+        this.Save();
+    }
+
+    #endregion
+
+    public PlayerLevelData GetPlayerLevelData(LevelData levelData)
+    {
+        if (!LevelProgress.ContainsKey(levelData.Id))
+        {
+            PlayerLevelData playerLevelData = new PlayerLevelData();
+            playerLevelData.Id = levelData.Id;
+            LevelProgress.Upsert(levelData.Id, playerLevelData);
+            return playerLevelData;
+        }
+        else
+        {
+            return LevelProgress[levelData.Id];
+        }
     }
 
     public void Save()
@@ -33,6 +85,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
 
         // serialize to json
         string jsonData = JsonUtility.ToJson(this, true);
+        Debug.Log(jsonData);
 
         // write the file
         BinaryFormatter bf = new BinaryFormatter();
@@ -56,6 +109,15 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
                 JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
             }
         }
+
+        Debug.Log(
+            string.Join(
+                ", ",
+                this.LevelProgress
+                .Select(k => string.Format("Id: {0}, completed: {1}", k.Value.Id, k.Value.LevelCompleted))
+                .ToList()
+            )
+        );
     }
 
     public void OnAfterDeserialize()

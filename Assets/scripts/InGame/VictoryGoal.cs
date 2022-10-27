@@ -9,6 +9,8 @@ public class VictoryGoal : SceneLoader
 {
     [SerializeField]
     public string VictoryScene = "Scenes/game/overworld/overworld-main";
+    [SerializeField]
+    public LevelData LevelData;
 
     private void Start()
     {
@@ -18,10 +20,11 @@ public class VictoryGoal : SceneLoader
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger collision");
-        Debug.Log(other);
         if (other.gameObject.tag.Contains("Player"))
         {
+            GameEventDispatcher.DispatchOnVictoryTriggered(LevelData);
+
+            // load the overworld (or victory scene)
             base.LoadLevel(new List<string> { VictoryScene });
         }
     }

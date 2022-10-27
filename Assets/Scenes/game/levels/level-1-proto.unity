@@ -8296,6 +8296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VictoryScene: Scenes/game/overworld/overworld-main
+  LevelData: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
 --- !u!43 &1515018126
 Mesh:
   m_ObjectHideFlags: 0
