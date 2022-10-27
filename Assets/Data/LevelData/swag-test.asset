@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57816b7e5e74e434690d61bc494fc4df, type: 3}
+  m_Name: swag-test
+  m_EditorClassIdentifier: 
+  Id: abe54ff5-8f23-4e37-bcf6-e47ba3c6ed20
+  SceneDisplayName: TEST SWAG
+  ScenesToLoad:
+  - Scenes/SwagMaster1317/scene

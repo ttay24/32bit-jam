@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 public class OverworldLevelLoader : SceneLoader
 {
     // level info
+    // TODO: take in the level data; update this to dispatch the entire level data object (use name and stats for display)
+    [SerializeField]
+    LevelData LevelData;
     [SerializeField]
     string LevelName;
 
@@ -65,7 +68,7 @@ public class OverworldLevelLoader : SceneLoader
 
             // if this wasn't in range, the it changed, so let's dispatch an event saying that it changed
             if (!InRange)
-                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, true);
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, LevelData, true);
 
             InRange = true;
         }
@@ -76,7 +79,7 @@ public class OverworldLevelLoader : SceneLoader
             // if we were in range, then we know we haven't unset it. We only want to do this 
             // once, otherwise we might overwrite other levels that are trying to display
             if (InRange)
-                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, false);
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, LevelData, false);
 
             InRange = false;
         }

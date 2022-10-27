@@ -8,9 +8,9 @@ public class OverworldEventDispatcher : MonoBehaviour
     // event for when levels are in range
     public static event OnPlayerEnterLevelSelectionHandler OnPlayerEnterLevelSelection;
     public delegate void OnPlayerEnterLevelSelectionHandler(string levelName, PlayerEnterLevelSelectionArgs e);
-    public static void DispatchOnPlayerEnterLevelSelection(string levelName, bool inRange)
+    public static void DispatchOnPlayerEnterLevelSelection(string levelName, LevelData levelData, bool inRange)
     {
-        OnPlayerEnterLevelSelection?.Invoke(levelName, new PlayerEnterLevelSelectionArgs(inRange));
+        OnPlayerEnterLevelSelection?.Invoke(levelName, new PlayerEnterLevelSelectionArgs(levelData, inRange));
     }
 }
 
@@ -18,10 +18,12 @@ public class OverworldEventDispatcher : MonoBehaviour
 
 public class PlayerEnterLevelSelectionArgs : EventArgs
 {
+    public LevelData LevelData;
     public bool InRange;
 
-    public PlayerEnterLevelSelectionArgs(bool inRange)
-    { 
+    public PlayerEnterLevelSelectionArgs(LevelData levelData, bool inRange)
+    {
+        LevelData = levelData;
         InRange = inRange;
     }
 }
