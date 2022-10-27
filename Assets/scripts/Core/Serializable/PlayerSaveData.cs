@@ -33,6 +33,11 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
         // TODO: pull in any dependencies after we load
     }
 
+    private void Start()
+    {
+        this.Load();
+    }
+
     private void OnEnable()
     {
         GameEventDispatcher.OnVictoryTriggered += GameEventDispatcher_OnVictoryTriggered;
@@ -114,7 +119,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
             string.Join(
                 ", ",
                 this.LevelProgress
-                .Select(k => string.Format("Id: {0}, completed: {1}", k.Value.Id, k.Value.LevelCompleted))
+                .Select(k => string.Format("Id: {0}, completed: {1}, prisoners saved: {2}", k.Value.Id, k.Value.LevelCompleted, k.Value.PrisonersObtained))
                 .ToList()
             )
         );
