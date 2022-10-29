@@ -30,6 +30,15 @@ public class GameEventDispatcher : MonoBehaviour
     }
     #endregion
 
+    #region item pickup
+    // event for when spotlights are triggered
+    public event Action<ItemPickupData> OnItemPickup;
+    public void DispatchOnItemPickup(ItemPickupData args)
+    {
+        OnItemPickup?.Invoke(args);
+    }
+    #endregion
+
     #region victory reached
     // event for when spotlights are triggered
     public static event EventHandler OnVictoryTriggered;

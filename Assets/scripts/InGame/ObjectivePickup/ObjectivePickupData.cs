@@ -18,5 +18,4 @@ public enum ObjectivePickupType
 {
     Prisoner,
     Note,
-    Key,
 }

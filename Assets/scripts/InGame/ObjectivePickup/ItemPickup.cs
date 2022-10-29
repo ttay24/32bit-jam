@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public ItemPickupData ItemPickupData;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag.Contains("Player"))
+        {
+            GameEventDispatcher.Instance.DispatchOnItemPickup(ItemPickupData);
+            Destroy(this.gameObject);
+        }
     }
 }

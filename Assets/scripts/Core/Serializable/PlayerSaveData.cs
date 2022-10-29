@@ -27,6 +27,9 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
     // TODO: inventory
 
     [SerializeField]
+    public int Keys = 0;
+
+    [SerializeField]
     private CurrentRunPlayerData CurrentRunPlayerDataComponent;
 
     private void Awake()
