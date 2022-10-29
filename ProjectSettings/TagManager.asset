@@ -7,17 +7,19 @@ TagManager:
   - CinemachineTarget
   - SpawnPoint
   - CurrentLevelData
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - EnemyAggro
   - Water
   - UI
-  - 
+  - PlayerAggro
   - Player
   - Bullet
-  - 
+  - EnemyDistance
   - 
   - 
   - 
