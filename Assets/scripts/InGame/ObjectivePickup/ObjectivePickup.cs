@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ObjectivePickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public ObjectivePickupData ObjectivePickupData;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag.Contains("Player"))
+        {
+            GameEventDispatcher.DispatchOnObjectivePickup(other.gameObject, new ObjectivePickupEventArgs(ObjectivePickupData));
+        }
     }
 }

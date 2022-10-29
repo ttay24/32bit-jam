@@ -135,7 +135,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(5, 5, 100, 50), "Save"))
+        /*if (GUI.Button(new Rect(5, 5, 100, 50), "Save"))
         {
             this.Save();
         }
@@ -143,7 +143,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
         if (GUI.Button(new Rect(5, 60, 100, 50), "Load"))
         {
             this.Load();
-        }
+        }*/
     }
 }
 

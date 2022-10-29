@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8c3e1bb18ba4c73469fd4c090cc4a10a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - You Dense Mercury
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2853a52a9ac29ab438f2346dd06f8622, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
