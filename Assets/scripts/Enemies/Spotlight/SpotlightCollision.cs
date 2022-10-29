@@ -6,6 +6,7 @@ public class SpotlightCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        GameEventDispatcher.DispatchOnSpotlightTriggered(other.gameObject);
+        if (other.tag.Contains("Player"))
+            GameEventDispatcher.DispatchOnSpotlightTriggered(other.gameObject);
     }
 }
