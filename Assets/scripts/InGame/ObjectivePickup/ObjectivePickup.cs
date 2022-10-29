@@ -11,7 +11,8 @@ public class ObjectivePickup : MonoBehaviour
     {
         if (other.tag.Contains("Player"))
         {
-            GameEventDispatcher.DispatchOnObjectivePickup(other.gameObject, new ObjectivePickupEventArgs(ObjectivePickupData));
+            GameEventDispatcher.Instance.DispatchOnObjectivePickup(ObjectivePickupData);
+            Destroy(this.gameObject);
         }
     }
 }

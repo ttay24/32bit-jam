@@ -1,4 +1,5 @@
 using Jam.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,6 @@ public class OverworldLevelLoader : SceneLoader
     // TODO: take in the level data; update this to dispatch the entire level data object (use name and stats for display)
     [SerializeField]
     LevelData LevelData;
-    [SerializeField]
-    string LevelName;
-
-    [SerializeField]
-    public List<string> ScenesToLoad = new List<string>();
 
     [SerializeField]
     public float CollisionRadius = 18.0f;
@@ -68,7 +64,7 @@ public class OverworldLevelLoader : SceneLoader
 
             // if this wasn't in range, the it changed, so let's dispatch an event saying that it changed
             if (!InRange)
-                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, LevelData, true);
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelData.SceneDisplayName, LevelData, true);
 
             InRange = true;
         }
@@ -79,7 +75,7 @@ public class OverworldLevelLoader : SceneLoader
             // if we were in range, then we know we haven't unset it. We only want to do this 
             // once, otherwise we might overwrite other levels that are trying to display
             if (InRange)
-                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelName, LevelData, false);
+                OverworldEventDispatcher.DispatchOnPlayerEnterLevelSelection(LevelData.SceneDisplayName, LevelData, false);
 
             InRange = false;
         }
@@ -87,6 +83,6 @@ public class OverworldLevelLoader : SceneLoader
 
     public void LoadScenes()
     {
-        LoadLevel(ScenesToLoad);
+        LoadLevel(LevelData.ScenesToLoad);
     }
 }

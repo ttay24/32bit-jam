@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class GameEventDispatcher : MonoBehaviour
 {
+    public static GameEventDispatcher Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     #region spotlight
     // event for when spotlights are triggered
     public static event EventHandler OnSpotlightTriggered;
@@ -16,10 +23,10 @@ public class GameEventDispatcher : MonoBehaviour
 
     #region objective pickup
     // event for when spotlights are triggered
-    public static event EventHandler OnObjectivePickup;
-    public static void DispatchOnObjectivePickup(object sender, ObjectivePickupEventArgs args)
+    public event Action<ObjectivePickupData> OnObjectivePickup;
+    public void DispatchOnObjectivePickup(ObjectivePickupData args)
     {
-        OnObjectivePickup?.Invoke(sender, args);
+        OnObjectivePickup?.Invoke(args);
     }
     #endregion
 
@@ -31,9 +38,18 @@ public class GameEventDispatcher : MonoBehaviour
         OnVictoryTriggered?.Invoke(sender, null);
     }
     #endregion
+
+    #region current run player data updated
+    // event for when spotlights are triggered
+    public event Action<PlayerLevelData> OnCurrentRunUpdated;
+    public void DispatchCurrentRunUpdated(PlayerLevelData args)
+    {
+        OnCurrentRunUpdated?.Invoke(args);
+    }
+    #endregion
 }
 
-public class ObjectivePickupEventArgs : EventArgs
+/*public class ObjectivePickupEventArgs : EventArgs
 {
     public ObjectivePickupData PickupData;
 
@@ -41,4 +57,4 @@ public class ObjectivePickupEventArgs : EventArgs
     {
         PickupData = pickupData;
     }
-}
+}*/

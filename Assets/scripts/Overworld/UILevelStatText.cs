@@ -33,7 +33,10 @@ public class UILevelStatText : MonoBehaviour
         if (e.InRange)
         {
             PlayerSaveData.Instance.LevelProgress.TryGetValue(e.LevelData.Id, out var levelProgress);
-            UIText.text = string.Format("Level completed: {0}", levelProgress.LevelCompleted);
+            UIText.text = string.Format(
+                "Level completed: {0}\nPrisoners Rescued: {1}", 
+                levelProgress.LevelCompleted, levelProgress.PrisonersObtained
+            );
         }
         else
             UIText.text = "";

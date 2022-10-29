@@ -26,6 +26,9 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
     public PlayerLevelProgressDictionary LevelProgress = new PlayerLevelProgressDictionary();
     // TODO: inventory
 
+    [SerializeField]
+    private CurrentRunPlayerData CurrentRunPlayerDataComponent;
+
     private void Awake()
     {
         _instance = this;
@@ -35,6 +38,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
 
     private void Start()
     {
+        Debug.Log("Loading player save data");
         this.Load();
     }
 
@@ -55,6 +59,11 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
 
         // get the level progress (or instantiate it)
         PlayerLevelData playerLevelData = GetPlayerLevelData(levelData);
+
+        // get current run...check to see if we beat any scores
+        var currentRun = GameObject.FindObjectOfType<CurrentRunPlayerData>();
+        if (currentRun?.PlayerLevelData.PrisonersObtained > playerLevelData.PrisonersObtained)
+            playerLevelData.PrisonersObtained = currentRun.PlayerLevelData.PrisonersObtained;
 
         // mark completed
         playerLevelData.LevelCompleted = true;

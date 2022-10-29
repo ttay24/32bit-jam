@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Jam.Core
 {
     public class SceneLoader : MonoBehaviour
     {
+        public Action<LevelData> LevelsLoaded;
+
         private List<AsyncOperation> loadingScenes = new List<AsyncOperation>();
 
         public void LoadLevel(List<string> scenes)
