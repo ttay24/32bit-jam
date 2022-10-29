@@ -20,5 +20,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/game/levels/level-1-proto.unity
     guid: 548d75207d9f27a48bc4efdae6051b08
+  - enabled: 1
+    path: Assets/Scenes/game/levels/level-2-proto.unity
+    guid: 4531f17ee37459e4a800cac1097cb282
+  - enabled: 1
+    path: Assets/Scenes/game/levels/level-3.unity
+    guid: 3f48d245c98232d47a21db01702b8096
+  - enabled: 1
+    path: Assets/Scenes/game/levels/level-boss.unity
+    guid: f0de735db2ce86842a6845f51a5604df
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
