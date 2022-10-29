@@ -1015,6 +1015,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154260455}
   m_CullTransparentMesh: 1
+--- !u!1001 &1175001233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1613200622}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.893
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.056
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
+      propertyPath: m_Name
+      value: Captain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d40fcb8ecfae14db1b0b42aa7810b9, type: 3}
 --- !u!1 &1416376648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1112,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 28, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1613200622 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4063854674947771173, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+  m_PrefabInstance: {fileID: 1921908562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752697064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1245,22 @@ PrefabInstance:
       propertyPath: CurrentRunPlayerDataComponent
       value: 
       objectReference: {fileID: 33206515}
+    - target: {fileID: 2579353625365467377, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472198636338349864, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852384110204640658, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852384110204640658, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.992
+      objectReference: {fileID: 0}
     - target: {fileID: 8578890167820323942, guid: 80e77b60ee1f211488d0db5118321690, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
