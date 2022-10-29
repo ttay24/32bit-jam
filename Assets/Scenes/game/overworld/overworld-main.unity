@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 530819479}
   - component: {fileID: 530819478}
   m_Layer: 0
-  m_Name: Level3 (1)
+  m_Name: LevelBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d016aca7595a1a4c9748a45ab241e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+  LevelData: {fileID: 11400000, guid: 7153a22f62d393d42985d5b9b071fea1, type: 2}
   CollisionRadius: 27
 --- !u!65 &530819479
 BoxCollider:
@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d016aca7595a1a4c9748a45ab241e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+  LevelData: {fileID: 11400000, guid: 520cb6aac0d339f47b42b7d9c3038730, type: 2}
   CollisionRadius: 27
 --- !u!65 &1195413739
 BoxCollider:
@@ -2404,7 +2404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d016aca7595a1a4c9748a45ab241e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+  LevelData: {fileID: 11400000, guid: 8a6153fa88ff20d4ea607b6affef7a11, type: 2}
   CollisionRadius: 27
 --- !u!65 &1811009345
 BoxCollider:

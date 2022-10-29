@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VictoryScene: Scenes/game/overworld/overworld-main
-  LevelData: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+  LevelData: {fileID: 11400000, guid: 8a6153fa88ff20d4ea607b6affef7a11, type: 2}
 --- !u!4 &1505312842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928261279726411449, guid: 85220b418355994499e06a612537b1a7, type: 3}
@@ -1092,6 +1092,6 @@ PrefabInstance:
     - target: {fileID: 7385760888922702285, guid: 4614b7358711899419471c5587dc0260, type: 3}
       propertyPath: LevelData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+      objectReference: {fileID: 11400000, guid: 8a6153fa88ff20d4ea607b6affef7a11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4614b7358711899419471c5587dc0260, type: 3}

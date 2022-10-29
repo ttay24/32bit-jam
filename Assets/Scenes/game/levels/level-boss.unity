@@ -510,7 +510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1502077107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1092,6 +1092,6 @@ PrefabInstance:
     - target: {fileID: 7385760888922702285, guid: 4614b7358711899419471c5587dc0260, type: 3}
       propertyPath: LevelData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ee222de9c575d347a6e9146b8d22c79, type: 2}
+      objectReference: {fileID: 11400000, guid: 7153a22f62d393d42985d5b9b071fea1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4614b7358711899419471c5587dc0260, type: 3}
