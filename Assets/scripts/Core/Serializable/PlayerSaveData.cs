@@ -64,6 +64,8 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
         var currentRun = GameObject.FindObjectOfType<CurrentRunPlayerData>();
         if (currentRun?.PlayerLevelData.PrisonersObtained > playerLevelData.PrisonersObtained)
             playerLevelData.PrisonersObtained = currentRun.PlayerLevelData.PrisonersObtained;
+        if (currentRun?.PlayerLevelData.Keys > playerLevelData.Keys)
+            playerLevelData.Keys = currentRun.PlayerLevelData.Keys;
 
         // mark completed
         playerLevelData.LevelCompleted = true;
@@ -162,4 +164,5 @@ public struct PlayerLevelData
     public string Id;
     public int PrisonersObtained;
     public bool LevelCompleted;
+    public int Keys;
 }

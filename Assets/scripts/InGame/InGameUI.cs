@@ -8,6 +8,9 @@ public class InGameUI : MonoBehaviour
     [SerializeField]
     TMP_Text PrisonerText;
 
+    [SerializeField]
+    TMP_Text KeysText;
+
     private void Start()
     {
         GameEventDispatcher.Instance.OnCurrentRunUpdated += OnCurrentRunUpdated;
@@ -20,8 +23,7 @@ public class InGameUI : MonoBehaviour
 
     private void OnCurrentRunUpdated(PlayerLevelData e)
     {
-        Debug.Log("UPDATING PRISONER TEXT..." + PrisonerText.text);
         PrisonerText.text = "PRISONERS " + e.PrisonersObtained;
-        Debug.Log("UPDATED PRISONER TEXT...." + PrisonerText.text);
+        KeysText.text = "KEYS " + e.Keys;
     }
 }

@@ -55,6 +55,12 @@ public class CurrentRunPlayerData : MonoBehaviour
                 PlayerLevelData.PrisonersObtained++;
                 break;
             }
+
+            case ObjectivePickupType.Key:
+            {
+                PlayerLevelData.Keys++;
+                break;
+            }
         }
 
         // just go ahead and update it; something may have changed
