@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   Id: c7c47850-2da6-45dc-b993-a9b9d7b2b5a0
-  PickupType: 1
+  PickupType: 2
   Icon: {fileID: 0}
+  MaxCount: 1

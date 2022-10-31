@@ -56,6 +56,15 @@ public class GameEventDispatcher : MonoBehaviour
         OnCurrentRunUpdated?.Invoke(args);
     }
     #endregion
+
+    #region current run items
+    // event for when spotlights are triggered
+    public event Action<PlayerInventoryDictionary> OnCurrentRunItemsUpdated;
+    public void DispatchCurrentRunItemsUpdated(PlayerInventoryDictionary args)
+    {
+        OnCurrentRunItemsUpdated?.Invoke(args);
+    }
+    #endregion
 }
 
 /*public class ObjectivePickupEventArgs : EventArgs

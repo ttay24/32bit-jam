@@ -8,6 +8,8 @@ using UnityEngine;
 
 [Serializable]
 public class PlayerLevelProgressDictionary : UnitySerializedDictionary<string, PlayerLevelData> { }
+[Serializable]
+public class PlayerInventoryDictionary : UnitySerializedDictionary<ItemPickupType, PlayerItemInventory> { }
 
 [Serializable]
 public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
@@ -27,7 +29,7 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
     // TODO: inventory
 
     [SerializeField]
-    public int Keys = 0;
+    public PlayerInventoryDictionary Inventory = new PlayerInventoryDictionary();
 
     [SerializeField]
     private CurrentRunPlayerData CurrentRunPlayerDataComponent;
@@ -43,6 +45,13 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
     {
         Debug.Log("Loading player save data");
         this.Load();
+
+        GameEventDispatcher.Instance.OnItemPickup += Instance_OnItemPickup;
+    }
+
+    private void OnDestroy()
+    {
+        GameEventDispatcher.Instance.OnItemPickup -= Instance_OnItemPickup;
     }
 
     private void OnEnable()
@@ -56,6 +65,27 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
     }
 
     #region event handlers
+    private void Instance_OnItemPickup(ItemPickupData e)
+    {
+        if (Inventory.ContainsKey(e.PickupType))
+        {
+            var item = Inventory[e.PickupType];
+            item.ItemCount++;
+        }
+        else
+        {
+            Inventory[e.PickupType] = new PlayerItemInventory
+            {
+                Type = e.PickupType,
+                ItemCount = 1,
+            };
+        }
+        Debug.Log(Inventory[e.PickupType]);
+
+        // just go ahead and update it; something may have changed
+        GameEventDispatcher.Instance.DispatchCurrentRunItemsUpdated(Inventory);
+    }
+
     private void GameEventDispatcher_OnVictoryTriggered(object sender, EventArgs e)
     {
         LevelData levelData = (LevelData) sender;
@@ -67,8 +97,6 @@ public class PlayerSaveData : MonoBehaviour, ISerializationCallbackReceiver
         var currentRun = GameObject.FindObjectOfType<CurrentRunPlayerData>();
         if (currentRun?.PlayerLevelData.PrisonersObtained > playerLevelData.PrisonersObtained)
             playerLevelData.PrisonersObtained = currentRun.PlayerLevelData.PrisonersObtained;
-        if (currentRun?.PlayerLevelData.Keys > playerLevelData.Keys)
-            playerLevelData.Keys = currentRun.PlayerLevelData.Keys;
 
         // mark completed
         playerLevelData.LevelCompleted = true;
@@ -167,5 +195,11 @@ public struct PlayerLevelData
     public string Id;
     public int PrisonersObtained;
     public bool LevelCompleted;
-    public int Keys;
+}
+
+[Serializable]
+public class PlayerItemInventory
+{
+    public ItemPickupType Type;
+    public int ItemCount;
 }

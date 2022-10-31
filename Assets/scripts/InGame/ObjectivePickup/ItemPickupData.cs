@@ -7,6 +7,7 @@ public class ItemPickupData : ScriptableObject
     public string Id = Guid.NewGuid().ToString();
     public ItemPickupType PickupType;
     public Sprite Icon;
+    public int MaxCount = 1;
 
     [ContextMenu("Generate ID")]
     void GenerateId()
