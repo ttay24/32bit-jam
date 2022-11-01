@@ -171,7 +171,6 @@ MonoBehaviour:
     Id: 
     PrisonersObtained: 0
     LevelCompleted: 0
-    Keys: 0
 --- !u!1 &385200168
 GameObject:
   m_ObjectHideFlags: 0
