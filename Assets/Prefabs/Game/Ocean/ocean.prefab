@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9127589725939142348}
   - component: {fileID: 5618302975313055400}
   - component: {fileID: 6860476545650317269}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ocean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2261819821022964839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.05, y: -5.95, z: -8.266111}
+  m_LocalPosition: {x: 7.05, y: -9, z: -8.266111}
   m_LocalScale: {x: 1000, y: 10, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
